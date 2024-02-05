@@ -14,8 +14,8 @@ import java.util.List;
 public class BeansConfig {
     //TOPPINGS
     @Bean
-    Toppings getMozzarella(){
-        return new Toppings("Mozzarella", 92, 0.69);
+    Toppings getTomato(){
+        return new Toppings("Tomato", 92, 0.69);
     }
 
     @Bean
@@ -59,21 +59,28 @@ public class BeansConfig {
 
     @Bean
     Pizza getMargherita(){
-        return new Pizza("Margherita", 1104, 4.99);
+        List<String> toppings = new ArrayList<>();
+        toppings.add(getTomato().getName());
+        toppings.add(getCheese().getName());
+        return new Pizza("Margherita", 1104, 4.99, toppings);
     }
     @Bean
     Pizza getHawaiian(){
-        List<Toppings> toppings = new ArrayList<>();
-        toppings.add(getHam());
-        toppings.add(getPineapple());
+        List<String> toppings = new ArrayList<>();
+        toppings.add(getTomato().getName());
+        toppings.add(getCheese().getName());
+        toppings.add(getHam().getName());
+        toppings.add(getPineapple().getName());
         return new Pizza("Hawaiian pizza", 1024, 6.49, toppings);
     }
 
     @Bean
     Pizza getSalamiPizza(){
-        List<Toppings> toppings = new ArrayList<>();
-        toppings.add(getCheese());
-        toppings.add(getSalami());
+        List<String> toppings = new ArrayList<>();
+        toppings.add(getTomato().getName());
+        toppings.add(getCheese().getName());
+        toppings.add(getCheese().getName());
+        toppings.add(getSalami().getName());
         return new Pizza("Salami pizza", 1024, 6.49, toppings);
     }
 

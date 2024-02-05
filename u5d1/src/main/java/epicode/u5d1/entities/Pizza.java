@@ -10,25 +10,24 @@ import java.util.List;
 @Setter
 public class Pizza extends Element {
     private String description;
-    private List<Toppings> toppings;
+    private List<String> toppings;
 
 
     public Pizza(String name, int calories, double price) {
         super(name, calories, price);
-        this. description = "tomato, cheese, ";
+        this.description = "tomato, cheese ";
     }
 
-    public Pizza(String name, int calories, double price, List<Toppings> toppings) {
+    public Pizza(String name, int calories, double price, List<String> toppings) {
         super(name, calories, price);
         this.toppings = toppings;
-        this. description = "tomato, cheese " + toppings;
     }
 
     @Override
     public String toString() {
         return "Pizza{" +
-                "description=" + description +
-                ", name='" + name + '\'' +
+                "toppings: " + toppings +
+                ", name=' " + name + '\'' +
                 ", calories=" + calories +
                 ", price=" + price +
                 "} " +'\n';

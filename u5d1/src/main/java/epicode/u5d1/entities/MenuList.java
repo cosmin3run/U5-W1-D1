@@ -18,12 +18,28 @@ private List<Toppings> toppings;
         this.toppings = toppings;
     }
 
+    public void printMenu(){
+        System.out.println("MENU");
+        System.out.println("Pizzas");
+        this.pizzas.forEach(System.out::println);
+        System.out.println();
+
+        System.out.println("Drinks");
+        this.drinks.forEach(System.out::println);
+        System.out.println();
+
+        System.out.println("Toppings");
+        this.toppings.forEach(System.out::println);
+
+
+
+    }
+
     @Override
     public String toString() {
-        return "MenuList{" +
+        return "Menu:" +
                 pizzas + '\n' +
                  drinks + '\n' +
-                toppings +  '\n' +
-                '}';
+                toppings +  '\n' ;
     }
 }

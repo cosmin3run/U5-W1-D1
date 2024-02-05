@@ -16,7 +16,7 @@ public class U5d1Application {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(U5d1Application.class);
 
 		MenuList menuList = (MenuList) ctx.getBean("getMenu");
-		System.out.println(menuList);
+menuList.printMenu();
 	}
 
 }
