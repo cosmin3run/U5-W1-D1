@@ -1,6 +1,7 @@
 package epicode.u5d1;
 
 import epicode.u5d1.entities.Drinks;
+import epicode.u5d1.entities.MenuList;
 import epicode.u5d1.entities.Pizza;
 import epicode.u5d1.entities.Toppings;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,11 @@ import java.util.List;
 @Configuration
 public class BeansConfig {
     //TOPPINGS
+    @Bean
+    Toppings getMozzarella(){
+        return new Toppings("Mozzarella", 92, 0.69);
+    }
+
     @Bean
     Toppings getCheese(){
         return new Toppings("Cheese", 92, 0.69);
@@ -71,5 +77,27 @@ public class BeansConfig {
         return new Pizza("Salami pizza", 1024, 6.49, toppings);
     }
 
+    @Bean
+    MenuList getMenu(){
+        List<Pizza> pizzas = new ArrayList<>();
+        pizzas.add(getMargherita());
+        pizzas.add(getHawaiian());
+        pizzas.add(getSalamiPizza());
+
+        List<Toppings> toppings = new ArrayList<>();
+        toppings.add(getSalami());
+        toppings.add(getHam());
+        toppings.add(getPineapple());
+        toppings.add(getOnions());
+        toppings.add(getCheese());
+
+        List<Drinks> drinks = new ArrayList<>();
+        drinks.add(getLemonade());
+        drinks.add(getWater());
+        drinks.add(getWine());
+
+
+        return new MenuList(pizzas, drinks, toppings );
+    }
 
 }

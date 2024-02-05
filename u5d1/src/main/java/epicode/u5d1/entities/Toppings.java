@@ -17,6 +17,6 @@ public class Toppings extends Element {
                 "name='" + name + '\'' +
                 ", calories=" + calories +
                 ", price=" + price +
-                "} " + super.toString();
+                "} " ;
     }
 }

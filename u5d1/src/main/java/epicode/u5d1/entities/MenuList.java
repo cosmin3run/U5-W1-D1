@@ -18,5 +18,12 @@ private List<Toppings> toppings;
         this.toppings = toppings;
     }
 
-
+    @Override
+    public String toString() {
+        return "MenuList{" +
+                pizzas +
+                 drinks +
+                toppings +
+                '}';
+    }
 }

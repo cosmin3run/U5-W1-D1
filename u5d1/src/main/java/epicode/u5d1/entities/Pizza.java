@@ -12,6 +12,7 @@ public class Pizza extends Element {
     private String description;
     private List<Toppings> toppings;
 
+
     public Pizza(String name, int calories, double price) {
         super(name, calories, price);
     }
@@ -19,16 +20,16 @@ public class Pizza extends Element {
     public Pizza(String name, int calories, double price, List<Toppings> toppings) {
         super(name, calories, price);
         this.toppings = toppings;
-        this. description = "tomato, cheese, ";
+        this. description = "tomato, cheese, " + toppings;
     }
 
     @Override
     public String toString() {
         return "Pizza{" +
-                "toppings=" + description + toppings +
+                "description=" + description +
                 ", name='" + name + '\'' +
                 ", calories=" + calories +
                 ", price=" + price +
-                "} " ;
+                "} " +'\n';
     }
 }
