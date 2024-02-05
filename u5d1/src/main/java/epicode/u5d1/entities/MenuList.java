@@ -21,9 +21,9 @@ private List<Toppings> toppings;
     @Override
     public String toString() {
         return "MenuList{" +
-                pizzas +
-                 drinks +
-                toppings +
+                pizzas + '\n' +
+                 drinks + '\n' +
+                toppings +  '\n' +
                 '}';
     }
 }

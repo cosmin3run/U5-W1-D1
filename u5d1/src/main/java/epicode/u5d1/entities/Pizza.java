@@ -15,12 +15,13 @@ public class Pizza extends Element {
 
     public Pizza(String name, int calories, double price) {
         super(name, calories, price);
+        this. description = "tomato, cheese, ";
     }
 
     public Pizza(String name, int calories, double price, List<Toppings> toppings) {
         super(name, calories, price);
         this.toppings = toppings;
-        this. description = "tomato, cheese, " + toppings;
+        this. description = "tomato, cheese " + toppings;
     }
 
     @Override

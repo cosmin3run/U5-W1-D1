@@ -18,6 +18,6 @@ public class Drinks extends Element {
                 "name='" + name + '\'' +
                 ", calories=" + calories +
                 ", price=" + price +
-                "} " ;
+                "} "  +'\n';
     }
 }
